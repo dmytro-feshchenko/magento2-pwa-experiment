@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magento 2 PWA PoC</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="styles/app.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles-m.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles-l.css">
+
+  <!-- TODO add your manifest here -->
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Magento 2 PWA PoC</h1>
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+  </header>
+
+  <main class="main"></main>
+
+  <div class="templates" hidden>
+    <div id="productGridItemTemplate" class="product product-template" hidden>
+      <div class="product__image">
+        <img src="" alt="">
+      </div>
+      <div class="product__name"></div>
+      <div class="product__sku"></div>
+      <div class="">Price: $<span class="product__price"></span></div>
+      <div class="button__cart">
+        <button type="button" name="button" class="button button__primary">Add to Cart</button>
+      </div>
+    </div>
+    <div id="paginationTemplate" class="pagination" hidden>
+      <div class="pages">
+            <strong class="label pages-label" id="paging-label">Page</strong>
+            <ul class="items pages-items" aria-labelledby="paging-label">
+                <li class="item pages-item-previous">
+                    <a class="action previous" title="Previous">
+                        <span class="label">Page</span>
+                        <span>Previous</span>
+                    </a>
+                </li>
+                <li class="item current">
+                    <strong class="page">
+                        <span class="label">You're currently reading page</span>
+                        <span id="paginationCurrentPage"></span>
+                    </strong>
+                </li>
+
+                <li class="item pages-item-next">
+                    <a class="action next" title="Next">
+                        <span class="label">Page</span>
+                        <span>Next</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <footer class="page-footer"><div class="footer content">
+    <div class="block newsletter">
+      <div class="title"><strong>Newsletter</strong></div>
+      <div class="content">
+          <form class="form subscribe" novalidate="novalidate" action="" method="post" id="newsletter-validate-detail">
+              <div class="field newsletter">
+                  <label class="label" for="newsletter"><span>Sign Up for Our Newsletter:</span></label>
+                  <div class="control">
+                      <input name="email" type="email" id="newsletter" placeholder="Enter your email address" data-validate="{required:true, 'validate-email':true}">
+                  </div>
+              </div>
+              <div class="actions">
+                  <button class="action subscribe primary" title="Subscribe" type="submit">
+                      <span>Subscribe</span>
+                  </button>
+              </div>
+          </form>
+      </div>
+  </div>
+  <div class="links">
+    <div class="widget block block-static-block">
+        <ul class="footer links">
+          <li class="nav item"><a href="">About us</a></li>
+          <li class="nav item"><a href="">Customer Service</a></li>
+        </ul>
+    </div>
+  </div>
+  <ul class="footer links">
+      <li class="nav item"><a href="">Privacy and Cookie Policy</a></li>
+      <li class="nav item"><a href="">Search Terms</a></li>
+      <li class="nav item"><a href="">Orders and Returns</a></li>
+      <li class="nav item"><a href="">Advanced Search</a></li>
+      <li class="nav item"><a href="">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <small class="copyright">
+    <span>Copyright © 2018 IWD Agency.</span>
+  </small>
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <script src="scripts/app.js" async></script>
+
+</body>
+</html>
